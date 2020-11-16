@@ -1,32 +1,38 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <HelloWorld />
+<ul>
+    <li><router-link to="/">Home</router-link></li>
+    <li><router-link to="/demo1">demo1</router-link></li>
+    <li><router-link to="/demo2">demo2</router-link></li>
+    <li><router-link to="/demo3">demo3</router-link></li>
+    <li><router-link to="/demo4">demo4</router-link></li>
+</ul>
+<router-view></router-view>
+<test />
   </div>
 </template>
 
+<script>
+import HelloWorld from './components/HelloWorld'
+import test from './components/Test'
+
+export default {
+name:'app',
+components:{
+  HelloWorld,
+  test
+}
+}
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+ul{
+    margin: 0;
+    padding: 0;
 }
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+li{
+    display: inline;
+    margin: 8px;
 }
 </style>
